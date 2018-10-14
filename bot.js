@@ -1,6 +1,6 @@
 var Client = require('mpp-client-xt')
 var gClient = new Client('ws://www.multiplayerpiano.com:443')
-gClient.setChannel('Partner Maker')
+gClient.setChannel('test/PartnerMaker')
 gClient.start()
 var partners = []
 setInterval(function (){gClient.setName('Partner')})
