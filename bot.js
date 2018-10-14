@@ -23,7 +23,7 @@ setTimeout(function (){
          gClientmaker.say('done')
        }
      })
-},3000)
+},6000)
 
 var channels = []
 var count = 0
