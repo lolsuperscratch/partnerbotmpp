@@ -56,13 +56,13 @@ var exittimeout = 100
 	         gClient.stop()
 		 process.exit()
 	      }
+      } else {
+        exittimeout = 100;
       }
 	    }
     }
       
   },4000)
-setInterval(function () {
-   exittimeout = 100
-},9000)
+
   
  
