@@ -41,15 +41,28 @@ gClient.on("ls", function(ls) {
 		}
 
 	});
+var exittimeout = 100
 
   setInterval(function (){
     if (partners.length > 0) {
       gClient.setChannel(channels[Math.floor(Math.random()*channels.length)])
        var randompartner = partners[Math.floor(Math.random()*partners.length)]
       gClient.say(randompartner.user.name+': '+randompartner.message)
-      
+	    if (gClient.channel) {
+      if (gClient.channel._id == "test/PartnerMaker") {
+	      // if is gonna ban the bot then decrease exittimeout or else will disconnect and process will exit
+	      exittimeout = exittimeout - 10
+	      if (exittimeout < 1) {
+	         gClient.stop()
+		 process.exit()
+	      }
+      }
+	    }
     }
       
-  },5000)
+  },4000)
+setInterval(function () {
+   exittimeout = 100
+},9000)
   
  
